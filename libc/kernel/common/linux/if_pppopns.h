@@ -1,33 +1,34 @@
-/****************************************************************************
- ****************************************************************************
- ***
- ***   This header was automatically generated from a Linux kernel header
- ***   of the same name, to make information necessary for userspace to
- ***   call into the kernel available to libc.  It contains only constants,
- ***   structures, and macros generated from the original header, and thus,
- ***   contains no copyrightable information.
- ***
- ***   To edit the content of this header, modify the corresponding
- ***   source file (e.g. under external/kernel-headers/original/) then
- ***   run bionic/libc/kernel/tools/update_all.py
- ***
- ***   Any manual change here will be lost the next time this script will
- ***   be run. You've been warned!
- ***
- ****************************************************************************
- ****************************************************************************/
+/* include/linux/if_pppopns.h
+ *
+ * Header for PPP on PPTP Network Server / PPPoPNS Socket (RFC 2637)
+ *
+ * Copyright (C) 2009 Google, Inc.
+ * Author: Chia-chi Yeh <chiachi@android.com>
+ *
+ * This software is licensed under the terms of the GNU General Public
+ * License version 2, as published by the Free Software Foundation, and
+ * may be copied, distributed, and modified under those terms.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ */
+
 #ifndef __LINUX_IF_PPPOPNS_H
 #define __LINUX_IF_PPPOPNS_H
+
 #include <linux/socket.h>
 #include <linux/types.h>
-/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
+
+#define PX_PROTO_OPNS	3
+
 struct sockaddr_pppopns {
- sa_family_t sa_family;
- unsigned int sa_protocol;
- int tcp_socket;
-/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
- __u16 local;
- __u16 remote;
+	sa_family_t	sa_family;	/* AF_PPPOX */
+	unsigned int	sa_protocol;	/* PX_PROTO_OPNS */
+	int		tcp_socket;
+	__u16		local;
+	__u16		remote;
 } __attribute__((packed));
-#endif
-/* WARNING: DO NOT EDIT, AUTO-GENERATED CODE - SEE TOP FOR INSTRUCTIONS */
+
+#endif /* __LINUX_IF_PPPOPNS_H */
